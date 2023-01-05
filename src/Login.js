@@ -9,12 +9,13 @@ const Login = () => {
 });
   let history = useHistory();
 
-  const handleLogin = e => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     axiosWithAuth()
       .post('api/login', credentials)
       .then(res => {
+        console.log(res.data)
         localStorage.setItem('token', res.data.token);
         history.push('/friends');
       })
@@ -30,7 +31,7 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">USERNAME</label>
         <input
           type="text"
@@ -41,7 +42,7 @@ const Login = () => {
         />
         <label htmlFor="password">PASSWORD</label>
         <input
-          type="password"
+          type="text"
           id="password"
           name="password"
           value={credentials.password}

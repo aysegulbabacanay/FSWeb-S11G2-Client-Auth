@@ -9,7 +9,13 @@ function Logout() {
     history.push("/login");
   }, []);
 
-  return <div></div>;
+  return (
+  <div>
+    <p>
+    Lütfen Giriş Yapınız.
+    </p>
+    </div>
+    );
 }
 
 export default Logout;

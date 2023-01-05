@@ -11,14 +11,15 @@ const AddFriend = () => {
     email: "",
   });
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     axiosWithAuth()
       .post("api/friends", addFriend)
       .then((res) => {
         console.log(res);
-        history.push("/FriendList");
+        setAddFriend(res);
+        history.push("/friends");
         
       })
       .catch((err) => console.log(err.response.data.error));
@@ -33,7 +34,7 @@ const AddFriend = () => {
 
   return (
     <div className="formContainer"> 
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleSubmit}>
       <div className="formElement">
         <h1>Add Friend</h1>
         <label htmlFor="name">USERNAME</label>
@@ -50,7 +51,7 @@ const AddFriend = () => {
         <label htmlFor="email">EMAIL</label>
         <br />
         <input
-          type="email"
+          type="text"
           id="email"
           name="email"
           value={addFriend.email}
