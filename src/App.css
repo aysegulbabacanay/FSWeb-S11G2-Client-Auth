@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+* { box-sizing: border-box; }
+:root { font-size: 16px; font-family: Lato; }
+label { display: block; }
+
+.wrapper {
+  max-width: 960px;
+  width: 94%;
+  margin: 0 auto;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  font-weight: 900;
+  padding: .75rem 0.25rem .75rem .75rem;
+  border-bottom: 2px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section-title {
+  font-weight: 900;
+  font-size:2.5rem;
+  padding-bottom: 1rem;
+}
+
+.navs {
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+}
+
+.navs a {
+  display: block;
+  padding: .75rem 1.25rem;
+  background-color: #080808;
+  color: #fff;
+  text-decoration: none;
+}
+
+.friendList {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.friendList li {
+  margin-bottom: 1rem;
 }
